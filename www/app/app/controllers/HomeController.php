@@ -1,12 +1,20 @@
 <?php
 
+/**
+ * Class HomeController
+ *
+ * The main controller for user-facing pages
+ *
+ * @author     Shih Oon Liong <shihoon@mechaloid.com>
+ */
+
+
 class HomeController extends BaseController {
 
-	public function showWelcome()
-	{
-        return View::make('hello');
-	}
-
+    /**
+     * The leaderboard page
+     * @return mixed
+     */
     public function showLeaderboard()
     {
         $players = Player::all();

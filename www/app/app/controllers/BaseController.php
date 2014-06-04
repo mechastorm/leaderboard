@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Class BaseController
+ *
+ * Convenience base class provided by Laravel
+ *
+ * @author     Laravel
+ */
+
 class BaseController extends Controller {
 
 	/**
