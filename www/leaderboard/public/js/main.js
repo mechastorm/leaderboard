@@ -97,7 +97,7 @@ var App = (function () {
      */
     function updatePlayerTotal(player) {
         var el = $('#player-'+player.id).find('.player-total');
-        el.html(player.points);
+        el.html(player.total);
     }
 
     /**

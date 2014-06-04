@@ -2,7 +2,7 @@
 
 ## Overview
 
-A rebuild of the meteor.js app demo (http://michael.meteor.com/) in PHP and basic JQuery. In particular implemented with WebSockets so that the leaderboard is updated in real time as other clients connect to the server
+A rebuild of the [meteor.js app demo](http://michael.meteor.com/) in PHP and basic JQuery. In particular implemented with WebSockets so that the leaderboard is updated in real time as other clients connect to the server
 
 ## Build Specs
 

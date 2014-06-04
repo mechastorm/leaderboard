@@ -23,7 +23,7 @@ class Transaction extends Eloquent {
             $player = Player::find($transaction->player_id);
             $total = Transaction::where('player_id', '=', $transaction->player_id)->sum('points');
 
-            $player->points = $total;
+            $player->total = $total;
             $player->save();
 
         });

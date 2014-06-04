@@ -21,7 +21,7 @@ class CreatePlayersTable extends Migration {
             $table->increments('id')->unique();
             $table->string('name');
             $table->string('image_url');
-            $table->integer('points')->default(0);
+            $table->integer('total')->default(0);
             $table->timestamps();
         });
 	}
