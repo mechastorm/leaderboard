@@ -51,3 +51,9 @@ composer install
 echo "Set up tables and seed data for database"
 php artisan migrate
 php artisan db:seed
+echo "Setup WebSocket Server via Supervisor"
+sudo apt-get install supervisor
+sudo service supervisor restart
+sudo cp /vars/www/vhosts/leaderboard/app/config/brainsocket_server.conf /etc/supervisor/conf.d/brainsocket_server.conf
+sudo supervisorctl reread
+sudo supervisorctl update

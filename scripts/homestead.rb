@@ -17,6 +17,7 @@ class Homestead
 
     # Configure Port Forwarding To The Box
     config.vm.network "forwarded_port", guest: 80, host: 8000
+    config.vm.network "forwarded_port", guest: 8081, host: 8080
     config.vm.network "forwarded_port", guest: 3306, host: 33060
     config.vm.network "forwarded_port", guest: 5432, host: 54320
 
