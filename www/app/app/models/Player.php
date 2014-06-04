@@ -9,4 +9,9 @@ class Player extends Eloquent {
 	 */
 	protected $table = 'players';
 
+    public function transactions()
+    {
+        return $this->hasMany('Transaction');
+    }
+
 }

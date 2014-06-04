@@ -12,7 +12,7 @@ class ApiController extends BaseController {
         $transaction->ip = Request::getClientIp();
         $transaction->player_id = $playerId;
         $transaction->points = $points;
-        $transaction->Save();
+        $transaction->save();
 
         return Response::json(array('message' => 'ok'));
     }
