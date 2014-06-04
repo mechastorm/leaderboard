@@ -7,6 +7,6 @@ Thumbs.db
 /www/app/bootstrap/compiled.php
 /www/app/vendor
 /www/app/composer.phar
-/www/app/composer.lock
+/www/leaderboard/composer.lock
 .env.*.php
 .env.php
