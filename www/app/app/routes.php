@@ -14,3 +14,5 @@
 
 Route::get('/', 'HomeController@showLeaderboard');
 
+Route::post('/api/player/points', 'ApiController@addPlayerPoints');
+
