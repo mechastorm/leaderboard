@@ -11,7 +11,7 @@
                 <tr id="player-{{ $player->id }}"
                     data-name="{{ $player->name }}" data-id="{{ $player->id }}">
                     <td><h3>{{ $player->name }}</h3></td>
-                    <td><h3 class="player-data">{{ $player->points }}</h3></td>
+                    <td><h3 class="player-total">{{ $player->points }}</h3></td>
                 </tr>
                 @endforeach
                 </tbody>

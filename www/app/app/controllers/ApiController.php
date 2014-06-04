@@ -14,7 +14,12 @@ class ApiController extends BaseController {
         $transaction->points = $points;
         $transaction->save();
 
-        return Response::json(array('message' => 'ok'));
+        $player = Player::find($transaction->player_id);
+
+        return Response::json(array(
+            'message'   => 'ok',
+            'player'    => $player->toArray(),
+        ));
     }
 
 }

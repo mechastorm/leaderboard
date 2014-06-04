@@ -51,12 +51,17 @@ var App = (function () {
             },
             dataType: 'json',
             success: function(data) {
-                console.log('success', data);
+                updatePlayerTotal(data.player.id, data.player.points);
             },
             error: function(data) {
                 console.log(data);
             }
         });
+    }
+
+    function updatePlayerTotal(playerId, total) {
+        var el = $('#player-'+playerId).find('.player-total');
+        el.html(total);
     }
 
     /**
