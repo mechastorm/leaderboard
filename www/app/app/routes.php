@@ -12,5 +12,5 @@
 */
 
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'HomeController@showLeaderboard');
 

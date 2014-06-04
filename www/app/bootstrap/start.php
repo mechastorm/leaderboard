@@ -31,8 +31,8 @@ $env = $app->detectEnvironment(array(
         'homestead',
     ),
 
-    'ec2stage' => array(
-        'ec2stage'
+    'production' => array(
+        'production'
     ),
 
 ));

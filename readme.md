@@ -9,5 +9,4 @@ A rebuild of the meteor.js app demo (http://michael.meteor.com/) in PHP and basi
 
 ## ToDos
 
-- Add AJAX endpoint for point addition
 - Display Celebrities
