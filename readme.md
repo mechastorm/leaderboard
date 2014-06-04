@@ -2,7 +2,16 @@
 
 ## Overview
 
-A rebuild of the meteor.js app demo (http://michael.meteor.com/) in PHP and basic JQuery.
+A rebuild of the meteor.js app demo (http://michael.meteor.com/) in PHP and basic JQuery. In particular implemented with WebSockets so that the leaderboard is updated in real time as other clients connect to the server
+
+## Build Specs
+
+- A bundled local development server using Vagrant/VirtualBox via [Homestead](http://laravel.com/docs/homestead)
+- PHP (with [Laravel Framework](http://laravel.com/))
+    - Realtime event driven via websockets using [BrainSocket](https://github.com/BrainBoxLabs/brain-socket)
+- JQuery
+- Bootstrap with HTML5 Boilerplate
+- MySQL
 
 ## Local Dev Server
 
@@ -24,14 +33,6 @@ To start up the local server please do the following in a command line interface
 * Add the following urls to your local hosts file
     * `127.0.0.1            leaderboard.app`
 * Assume the vagrant box has fully booted up fine, you can access the site now at `http://leaderboard.app:8000`
-
-## Build Specs
-
-- Vagrant via [Homestead](http://laravel.com/docs/homestead) (for Local Dev Server)
-- PHP (with [Laravel Framework](http://laravel.com/))
-- JQuery
-- Bootstrap with HTML5 Boilerplate
-- MySQL
 
 ## Future Improvements
 

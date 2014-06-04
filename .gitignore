@@ -4,9 +4,9 @@ Thumbs.db
 .vagrant
 
 # Laravel App
-/www/app/bootstrap/compiled.php
-/www/app/vendor
-/www/app/composer.phar
+/www/leaderboard/bootstrap/compiled.php
+/www/leaderboard/vendor
+/www/leaderboard/composer.phar
 /www/leaderboard/composer.lock
 .env.*.php
 .env.php

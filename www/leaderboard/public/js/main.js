@@ -7,6 +7,7 @@ var App = (function () {
      * Private methods
      */
     var
+        brainSocket,
         selectedPlayer = {
             'name' : '',
             'id'   : null
@@ -16,6 +17,32 @@ var App = (function () {
      * Event Handler when Page is first loaded
      */
     function onPageload() {
+        brainSocket = new BrainSocket(
+            new WebSocket('ws://leaderboard.app:8080'),
+            new BrainSocketPubSub()
+        );
+
+        playerTotalUpdatesGlobalListener();
+
+        playerSelectListener();
+
+        addPointsListener();
+    }
+
+    /**
+     * Listener for updates to the player's total points globally from other clients
+     */
+    function playerTotalUpdatesGlobalListener() {
+        brainSocket.Event.listen('player.total.update',function(response) {
+            // console.log('player.total.update', response);
+            updatePlayerTotal(response.client.data);
+        });
+    }
+
+    /**
+     * Listener for when a player is selected
+     */
+    function playerSelectListener() {
         $('#leaderboard-list').on('click', 'tbody tr', function(event) {
             $(this).addClass('highlight').siblings().removeClass('highlight');
 
@@ -23,7 +50,12 @@ var App = (function () {
             selectedPlayer.id = $(this).data('id');
             $('#selected-player').html(selectedPlayer.name);
         });
+    }
 
+    /**
+     * Listener for when user wants points are to be added
+     */
+    function addPointsListener() {
         $('#add-points').click(function() {
             var
                 playerId = selectedPlayer.id,
@@ -51,7 +83,7 @@ var App = (function () {
             },
             dataType: 'json',
             success: function(data) {
-                updatePlayerTotal(data.player.id, data.player.points);
+                brainSocket.message('player.total.update', data.player);
             },
             error: function(data) {
                 console.log(data);
@@ -59,9 +91,13 @@ var App = (function () {
         });
     }
 
-    function updatePlayerTotal(playerId, total) {
-        var el = $('#player-'+playerId).find('.player-total');
-        el.html(total);
+    /**
+     * Update the player total to the user
+     * @param player
+     */
+    function updatePlayerTotal(player) {
+        var el = $('#player-'+player.id).find('.player-total');
+        el.html(player.points);
     }
 
     /**
