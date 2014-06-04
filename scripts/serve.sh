@@ -40,3 +40,14 @@ echo "$block" > "/etc/nginx/sites-available/$1"
 ln -s "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
 service nginx restart
 service php5-fpm restart
+
+# Run Site Specific Commands
+echo "Create MySQL Database"
+echo "create database leaderboard" | mysql -u homestead -psecret
+echo "Go to site app root"
+cd /vars/www/vhosts/leaderboard/
+echo "Install Composer"
+composer install
+echo "Set up tables and seed data for database"
+php artisan migrate
+php artisan db:seed

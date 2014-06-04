@@ -3,15 +3,15 @@ ip: "192.168.10.10"
 memory: 2048
 cpus: 1
 
-authorize: /home/mechastorm/.ssh/id_rsa.pub
+authorize: key_sample.pub
 
 keys:
-    - /home/mechastorm/.ssh/id_rsa
+    - key_sample
 
 folders:
-    - map: /home/mechastorm/work/personal/scores/www
+    - map: www
       to: /vars/www/vhosts
 
 sites:
-    - map: scores.app
-      to: /vars/www/vhosts/app/public
+    - map: leaderboard.app
+      to: /vars/www/vhosts/leaderboard/public

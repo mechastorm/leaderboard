@@ -35,5 +35,7 @@ To start up the local server please do the following in a command line interface
 
 ## Future Improvements
 
+- Have server provisioning handled by [Ansible](http://www.ansible.com/home) instead
+- Add websockets
 - Add a queueing system(ZeroMQ) to sum up the transactions on a separate process
 - Reimplement frontend in meteor or AngularJS
