@@ -8,5 +8,5 @@ Thumbs.db
 /www/app/vendor
 /www/app/composer.phar
 /www/app/composer.lock
-/www/app/.env.*.php
-/www/app/.env.php
+.env.*.php
+.env.php
