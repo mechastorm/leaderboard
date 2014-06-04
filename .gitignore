@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+.idea
+.vagrant
+
+# Laravel App
+/www/app/bootstrap/compiled.php
+/www/app/vendor
+/www/app/composer.phar
+/www/app/composer.lock
+/www/app/.env.*.php
+/www/app/.env.php
