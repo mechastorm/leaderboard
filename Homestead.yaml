@@ -10,8 +10,8 @@ keys:
 
 folders:
     - map: www
-      to: /vars/www/vhosts
+      to: /var/www/vhosts
 
 sites:
     - map: leaderboard.app
-      to: /vars/www/vhosts/leaderboard/public
+      to: /var/www/vhosts/leaderboard/public

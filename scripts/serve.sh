@@ -45,7 +45,7 @@ service php5-fpm restart
 echo "Create MySQL Database"
 echo "create database leaderboard" | mysql -u homestead -psecret
 echo "Go to site app root"
-cd /vars/www/vhosts/leaderboard/
+cd /var/www/vhosts/leaderboard/
 echo "Install Composer"
 composer install
 echo "Set up tables and seed data for database"
@@ -54,6 +54,6 @@ php artisan db:seed
 echo "Setup WebSocket Server via Supervisor"
 sudo apt-get install supervisor
 sudo service supervisor restart
-sudo cp /vars/www/vhosts/leaderboard/app/config/brainsocket_server.conf /etc/supervisor/conf.d/brainsocket_server.conf
+sudo cp /var/www/vhosts/leaderboard/app/config/brainsocket_server.conf /etc/supervisor/conf.d/brainsocket_server.conf
 sudo supervisorctl reread
 sudo supervisorctl update
