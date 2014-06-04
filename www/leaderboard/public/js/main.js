@@ -7,6 +7,7 @@ var App = (function () {
      * Private methods
      */
     var
+        revealedAddPointsUI = false,
         brainSocket,
         selectedPlayer = {
             'name' : '',
@@ -25,8 +26,6 @@ var App = (function () {
         playerTotalUpdatesGlobalListener();
 
         playerSelectListener();
-
-        addPointsListener();
     }
 
     /**
@@ -46,10 +45,23 @@ var App = (function () {
         $('#leaderboard-list').on('click', 'tbody tr', function(event) {
             $(this).addClass('highlight').siblings().removeClass('highlight');
 
+            if (!revealedAddPointsUI) {
+                revealAddPointsUI();
+                revealedAddPointsUI = true;
+            }
+
             selectedPlayer.name = $(this).data('name');
             selectedPlayer.id = $(this).data('id');
             $('#selected-player').html(selectedPlayer.name);
         });
+    }
+
+    /**
+     * Reveal the Add Points UI and begin listening to related events to it.
+     */
+    function revealAddPointsUI() {
+        $('#add-points').removeClass('hide');
+        addPointsListener();
     }
 
     /**

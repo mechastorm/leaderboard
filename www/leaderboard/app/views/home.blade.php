@@ -22,7 +22,7 @@
             <div class="user-actions">
                 <h2><span id="selected-player">Please Select a Player</span></h2>
                 <p>
-                    <button type="button" id="add-points" class="add-points btn btn-default" data-points="5">Add 5 Points</button>
+                    <button type="button" id="add-points" class="add-points btn btn-default hide" data-points="5">Add 5 Points</button>
                 </p>
             </div>
         </div>
